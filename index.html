@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <!-- SEO Primary Meta Tags -->
+  <title>Moonlight Birthday Journey ✨ — Priyanka's Birthday</title>
+  <meta name="title" content="Moonlight Birthday Journey ✨ — Priyanka's Birthday">
+  <meta name="description" content="A magical handcrafted mobile birthday experience created with love for Priyanka by Subhankar.">
+  <meta name="theme-color" content="#FFFDF9">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Moonlight Birthday Journey ✨ — Priyanka's Birthday">
+  <meta property="og:description" content="A magical handcrafted mobile birthday experience created with love for Priyanka by Subhankar.">
+  <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Moonlight Birthday Journey ✨">
+  <meta property="twitter:description" content="A magical handcrafted mobile birthday experience created with love for Priyanka.">
+
+  <!-- iOS & PWA App Setup -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Priyanka Bday">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- PWA Manifest & Icons -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       APP SHELL — Mobile Canvas Frame
+       ═══════════════════════════════════════ -->
+  <div id="app">
+
+    <!-- Global Back Button (SVG icon only) -->
+    <button id="global-back-btn" class="btn-back" data-nav="prev" aria-label="Previous page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <!-- Radial Light Wave Overlay for Theme Morphing -->
+    <div id="theme-wave-overlay" aria-hidden="true"></div>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PAGE 1 — The Secret Entrance
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="page-entrance" class="page page--entrance" data-page="0" aria-label="The Secret Entrance">
+
+      <!-- Organic Decoration Layer -->
+      <div class="page__decoration" aria-hidden="true">
+        <div class="deco-blob deco-blob--pink" style="top: -60px; right: -40px; width: 220px; height: 220px;"></div>
+        <div class="deco-blob deco-blob--peach" style="bottom: 8%; left: -60px; width: 180px; height: 180px;"></div>
+        <div class="deco-sparkle" style="top: 18%; right: 14%;">✦</div>
+        <div class="deco-sparkle deco-sparkle--sm" style="top: 32%; left: 12%;">✧</div>
+        <div class="deco-sparkle" style="bottom: 22%; right: 18%;">✦</div>
+        <div class="deco-heart" style="top: 14%; left: 18%;">♥</div>
+        <div class="deco-heart deco-heart--sm" style="bottom: 28%; right: 12%;">♥</div>
+        <div class="deco-flower" style="bottom: 12%; left: 8%;">🌸</div>
+      </div>
+
+      <div class="page__safe-top"></div>
+
+      <!-- Header -->
+      <header class="page__header">
+        <span class="label">You've been invited ✦</span>
+        <h1 class="heading-display">The Secret<br>Entrance</h1>
+      </header>
+
+      <!-- Hero — Envelope + Passcode -->
+      <div class="page__hero">
+        <!-- Glow behind envelope -->
+        <div class="glow-zone glow-zone--gold" aria-hidden="true"></div>
+
+        <!-- Envelope -->
+        <div class="envelope" id="entrance-envelope" role="img" aria-label="Sealed envelope">
+          <div class="envelope__flap"></div>
+          <div class="envelope__seal">✦</div>
+          <span class="envelope__label">A letter awaits ✉️</span>
+        </div>
+
+        <!-- Passcode Group -->
+        <div class="passcode-group">
+          <label for="passcode-input" class="passcode-group__label">Enter the secret code</label>
+          <input
+            type="text"
+            id="passcode-input"
+            class="input input--passcode"
+            placeholder="• • • •"
+            maxlength="4"
+            autocomplete="off"
+            inputmode="numeric"
+            aria-label="Secret passcode"
+          >
+          <p id="passcode-error" class="input-error" role="alert"></p>
+          <p class="passcode-hint" aria-hidden="true">✧ Hint: The year something special began ✧</p>
+        </div>
+
+        <!-- Unlock Button -->
+        <button id="unlock-btn" class="btn btn--primary btn--lg btn--full" style="max-width: 280px;">
+          Unlock ✦
+        </button>
+      </div>
+
+      <!-- Action — Hint -->
+      <div class="page__action">
+        <p class="hint">✧ Hint: It's a special number you both know ✧</p>
+      </div>
+
+      <div class="page__safe-bottom"></div>
+      <div class="page__floating" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PAGE 2 — Memory Lane
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="page-memories" class="page page--memories" data-page="1" aria-label="Memory Lane">
+
+      <div class="page__decoration" aria-hidden="true">
+        <div class="deco-blob deco-blob--peach" style="bottom: -40px; right: -60px; width: 240px; height: 240px;"></div>
+        <div class="deco-blob deco-blob--pink" style="top: -30px; left: -50px; width: 170px; height: 170px;"></div>
+        <div class="deco-sparkle" style="top: 12%; right: 10%;">✦</div>
+        <div class="deco-sparkle deco-sparkle--sm" style="bottom: 15%; left: 8%;">✧</div>
+        <div class="deco-flower" style="top: 8%; left: 5%;">❀</div>
+        <div class="deco-flower deco-flower--sm" style="bottom: 20%; right: 8%;">✿</div>
+      </div>
+
+      <div class="page__safe-top"></div>
+
+      <header class="page__header">
+        <span class="label">Chapter Two ✦</span>
+        <h1 class="heading-page">Beautiful Memories</h1>
+        <p class="subtitle" style="margin-top: var(--space-1);">A collection of your wonderful moments 🌸</p>
+      </header>
+
+      <div class="page__interactive">
+        <div class="gallery" aria-label="Memory gallery">
+          <div class="gallery__track" role="list">
+
+            <div class="gallery__item" role="listitem">
+              <div class="card">
+                <div class="card__image">
+                  <img src="assets/images/photos/1.webp" alt="Favorite Click" class="card__img" loading="eager">
+                </div>
+                <div class="card__body">
+                  <h3 class="card__title">Favorite Click</h3>
+                  <p class="card__text">Looking amazing as always ✨</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery__item" role="listitem">
+              <div class="card">
+                <div class="card__image">
+                  <img src="assets/images/photos/2.webp" alt="Golden Smile" class="card__img" loading="eager">
+                </div>
+                <div class="card__body">
+                  <h3 class="card__title">Golden Smile</h3>
+                  <p class="card__text">One of your happiest moments 🌼</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery__item" role="listitem">
+              <div class="card">
+                <div class="card__image">
+                  <img src="assets/images/photos/3.webp" alt="Shining Moment" class="card__img" loading="eager">
+                </div>
+                <div class="card__body">
+                  <h3 class="card__title">Shining Moment</h3>
+                  <p class="card__text">Bringing brightness and joy everywhere 🌟</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery__item" role="listitem">
+              <div class="card">
+                <div class="card__image">
+                  <img src="assets/images/photos/4.webp" alt="Pure Happiness" class="card__img" loading="eager">
+                </div>
+                <div class="card__body">
+                  <h3 class="card__title">Pure Happiness</h3>
+                  <p class="card__text">A smile that makes every day brighter! 🎂</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="gallery__dots" aria-label="Gallery navigation">
+            <button class="gallery__dot active" aria-label="Slide 1"></button>
+            <button class="gallery__dot" aria-label="Slide 2"></button>
+            <button class="gallery__dot" aria-label="Slide 3"></button>
+            <button class="gallery__dot" aria-label="Slide 4"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page__action">
+        <button class="btn btn--primary btn--lg btn--full" data-nav="next">Continue →</button>
+      </div>
+
+      <div class="page__safe-bottom"></div>
+      <div class="page__floating" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PAGE 3 — Mini Games
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="page-games" class="page page--games" data-page="2" aria-label="Mini Games">
+
+      <div class="page__decoration" aria-hidden="true">
+        <div class="deco-blob deco-blob--lavender" style="top: -50px; left: -40px; width: 220px; height: 220px;"></div>
+        <div class="deco-blob deco-blob--mint" style="bottom: -30px; right: -50px; width: 200px; height: 200px;"></div>
+        <div class="deco-sparkle" style="top: 10%; right: 12%;">⭐</div>
+        <div class="deco-sparkle deco-sparkle--sm" style="bottom: 20%; left: 15%;">✦</div>
+        <div class="deco-star" style="top: 25%; left: 8%;">☆</div>
+      </div>
+
+      <div class="page__safe-top"></div>
+
+      <header class="page__header">
+        <span class="label">Chapter Three ✦</span>
+        <h1 class="heading-page">Time to Play!</h1>
+      </header>
+
+      <div class="page__interactive">
+        <div class="game-header">
+          <div class="score" style="width: 100%; justify-content: space-between;">
+            <span class="score__label">🎈 Balloons Left</span>
+            <span class="score__value" id="balloons-count">20</span>
+          </div>
+        </div>
+
+        <div class="balloon-arena" id="balloon-game" aria-label="Balloon pop game"></div>
+      </div>
+
+      <div class="page__action">
+        <button class="btn btn--primary btn--lg btn--full" data-nav="next" disabled>Continue →</button>
+      </div>
+
+      <div class="page__safe-bottom"></div>
+      <div class="page__floating" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PAGE 4 — Favorite Color Quiz
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="page-quiz" class="page page--quiz" data-page="3" aria-label="Favorite Color Quiz">
+
+      <div class="page__decoration" aria-hidden="true">
+        <div class="deco-blob deco-blob--lavender" style="top: -40px; left: -40px; width: 220px; height: 220px;"></div>
+        <div class="deco-blob deco-blob--pink" style="bottom: -30px; right: -50px; width: 200px; height: 200px;"></div>
+        <div class="deco-sparkle" style="top: 12%; right: 12%;">⭐</div>
+        <div class="deco-heart" style="bottom: 20%; left: 15%;">💖</div>
+      </div>
+
+      <div class="page__safe-top"></div>
+
+      <header class="page__header">
+        <span class="label">Special Quiz ✦</span>
+        <h1 class="heading-page">Quick Question!</h1>
+        <p class="subtitle" style="margin-top: var(--space-1);">Pick the right answer 🌸</p>
+      </header>
+
+      <div class="page__interactive">
+        <div class="quiz" id="quiz-section" aria-label="Favorite Color Challenge" style="width: 100%; max-width: 360px;">
+          <p class="quiz__question" style="font-size: 1.3rem;">What is Priyanka's favorite color?</p>
+          <p class="subtitle" style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 8px;">Pick a bubble to transform the whole app! ✨</p>
+          <div class="color-bubble-grid" role="radiogroup" aria-label="Color choices">
+            <button class="color-bubble" data-theme="blush-pink" data-name="Blush Pink" data-icon="🌸" style="--bubble-color: #FFB6C9; --bubble-glow: rgba(255, 182, 201, 0.5);">
+              <div class="color-bubble__shine"></div>
+              <span>🌸 Blush Pink</span>
+            </button>
+            <button class="color-bubble" data-theme="lavender" data-name="Lavender" data-icon="💜" style="--bubble-color: #C9B6FF; --bubble-glow: rgba(201, 182, 255, 0.5);">
+              <div class="color-bubble__shine"></div>
+              <span>💜 Lavender</span>
+            </button>
+            <button class="color-bubble" data-theme="rose-pink" data-name="Rose Pink" data-icon="🌷" style="--bubble-color: #FF7EB9; --bubble-glow: rgba(255, 126, 185, 0.5);">
+              <div class="color-bubble__shine"></div>
+              <span>🌷 Rose Pink</span>
+            </button>
+            <button class="color-bubble" data-theme="peach" data-name="Peach" data-icon="🍑" style="--bubble-color: #FFC7A6; --bubble-glow: rgba(255, 199, 166, 0.5);">
+              <div class="color-bubble__shine"></div>
+              <span>🍑 Peach</span>
+            </button>
+            <button class="color-bubble" data-theme="baby-blue" data-name="Baby Blue" data-icon="🩵" style="--bubble-color: #A9D9FF; --bubble-glow: rgba(169, 217, 255, 0.5);">
+              <div class="color-bubble__shine"></div>
+              <span>🩵 Baby Blue</span>
+            </button>
+            <button class="color-bubble" data-theme="butter-yellow" data-name="Butter Yellow" data-icon="💛" style="--bubble-color: #FFE89A; --bubble-glow: rgba(255, 232, 154, 0.5);">
+              <div class="color-bubble__shine"></div>
+              <span>💛 Butter Yellow</span>
+            </button>
+            <button class="color-bubble" data-theme="mint-green" data-name="Mint Green" data-icon="🌿" style="--bubble-color: #BFF7D4; --bubble-glow: rgba(191, 247, 212, 0.5);">
+              <div class="color-bubble__shine"></div>
+              <span>🌿 Mint Green</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page__action">
+        <button class="btn btn--primary btn--lg btn--full" data-nav="next" disabled>Continue →</button>
+      </div>
+
+      <div class="page__safe-bottom"></div>
+      <div class="page__floating" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PAGE 5 — Cake Ceremony
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="page-cake" class="page page--cake" data-page="4" aria-label="Cake Ceremony">
+
+      <div class="page__decoration" aria-hidden="true">
+        <div class="deco-blob deco-blob--pink" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 340px; height: 340px; opacity: 0.15;"></div>
+        <div class="deco-blob deco-blob--gold" style="top: -40px; left: 50%; transform: translateX(-50%); width: 280px; height: 160px; opacity: 0.2;"></div>
+        <div class="deco-sparkle" style="top: 8%; left: 18%;">✨</div>
+        <div class="deco-sparkle" style="top: 12%; right: 15%;">✨</div>
+        <div class="deco-sparkle deco-sparkle--sm" style="bottom: 30%; left: 12%;">✦</div>
+        <div class="deco-sparkle deco-sparkle--sm" style="bottom: 25%; right: 10%;">✦</div>
+        <div class="deco-heart" style="top: 20%; right: 20%;">♥</div>
+        <div class="deco-heart deco-heart--sm" style="top: 22%; left: 15%;">♥</div>
+      </div>
+
+      <div class="page__safe-top"></div>
+
+      <header class="page__header">
+        <span class="label">Chapter Four ✦</span>
+        <h1 class="heading-display">Make a Wish</h1>
+        <p class="subtitle" style="margin-top: var(--space-1);">Close your eyes… and blow ✨</p>
+      </header>
+
+      <div class="page__hero">
+        <div class="glow-zone glow-zone--pink" aria-hidden="true"></div>
+
+        <div class="cake" aria-label="Birthday cake with candles">
+          <div class="cake__candles" aria-label="Birthday candles">
+            <div class="cake__candle"><div class="cake__flame" aria-label="Candle 1"></div></div>
+            <div class="cake__candle"><div class="cake__flame" aria-label="Candle 2"></div></div>
+            <div class="cake__candle"><div class="cake__flame" aria-label="Candle 3"></div></div>
+            <div class="cake__candle"><div class="cake__flame" aria-label="Candle 4"></div></div>
+            <div class="cake__candle"><div class="cake__flame" aria-label="Candle 5"></div></div>
+          </div>
+          <span class="cake__label">🎂 Birthday Cake</span>
+        </div>
+
+        <p class="cake-instruction" id="cake-instruction">Tap each flame to blow it out!</p>
+      </div>
+
+      <div class="page__action">
+        <button class="btn btn--primary btn--lg btn--full" data-nav="next" disabled>Continue →</button>
+      </div>
+
+      <div class="page__safe-bottom"></div>
+      <div class="page__floating" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PAGE 6 — Letter
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="page-letter" class="page page--letter" data-page="5" aria-label="Personal Letter">
+
+      <div class="page__decoration" aria-hidden="true">
+        <div class="deco-blob deco-blob--peach" style="top: 30%; left: -60px; width: 220px; height: 220px; opacity: 0.15;"></div>
+        <div class="deco-blob deco-blob--pink" style="bottom: -40px; right: -40px; width: 200px; height: 200px; opacity: 0.12;"></div>
+        <div class="deco-sparkle deco-sparkle--sm" style="top: 15%; right: 12%;">✧</div>
+        <div class="deco-heart deco-heart--sm" style="bottom: 15%; left: 15%;">♥</div>
+      </div>
+
+      <div class="page__safe-top"></div>
+
+      <header class="page__header">
+        <span class="label">Chapter Six ✦</span>
+        <h1 class="heading-page">A Letter for You</h1>
+        <p class="subtitle" style="margin-top: var(--space-1);">Every word matters… read slowly 💌</p>
+      </header>
+
+      <div class="page__interactive">
+        <div class="letter" aria-label="Personal birthday letter">
+          <p class="letter__text"></p>
+          <span class="letter__cursor" aria-hidden="true"></span>
+        </div>
+
+        <div class="audio-player" aria-label="Background music">
+          <button class="audio-player__btn" aria-label="Play audio">▶</button>
+          <div class="audio-player__track">
+            <div class="audio-player__progress">
+              <div class="audio-player__fill"></div>
+            </div>
+          </div>
+          <span class="audio-player__time">0:00</span>
+        </div>
+      </div>
+
+      <div class="page__action">
+        <button class="btn btn--primary btn--lg btn--full" data-nav="next" disabled>Continue →</button>
+      </div>
+
+      <div class="page__safe-bottom"></div>
+      <div class="page__floating" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PAGE 7 — Final Chapter (Scrollable Magical Room)
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="page-gift" class="page page--gift page--scrollable" data-page="6" aria-label="Final Gift">
+
+      <!-- Small Top Right SVG Reset Button -->
+      <button id="gift-reset-btn" class="btn-reset-icon" aria-label="Reset experience" title="Reset Scratch & Experience">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+          <path d="M3 12a9 9 0 0 1 15-6.7L21 8"/>
+          <path d="M21 3v5h-5"/>
+          <path d="M21 12a9 9 0 0 1-15 6.7L3 16"/>
+          <path d="M3 21v-5h5"/>
+        </svg>
+      </button>
+
+      <!-- Scroll Curiosity SVG Popup -->
+      <div class="scroll-curiosity-popup visible" id="scroll-curiosity-popup" aria-label="Scroll down">
+        <span>Scroll to explore</span>
+        <svg class="scroll-down-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+          <path d="M12 5v14M19 12l-7 7-7-7"/>
+        </svg>
+      </div>
+
+      <!-- Scrollable Inner Container -->
+      <div class="page-gift-scroll" id="page-gift-scroll">
+
+        <!-- ── SECTION: HERO ── -->
+        <div class="gift-section gift-section--hero">
+          <span class="label">Final Chapter ✦</span>
+          <h1 class="heading-display">One Last<br>Surprise</h1>
+          <p class="subtitle" style="margin-top: var(--space-1);">Tap or scratch the card below ✨</p>
+
+          <p class="scratch-instruction" id="gift-hint">✨ Scratch to Reveal the Surprise ✨</p>
+
+          <!-- Scratch Card with Organic Blob Photo -->
+          <div class="scratch-card" id="scratch-card" aria-label="Scratch to reveal Priyanka's portrait">
+            <div class="scratch-card__reveal">
+              <div class="photo-frame-blob" id="photo-frame">
+                <div class="photo-frame-blob__inner">
+                  <img src="assets/images/photos/10.webp" alt="Priyanka Portrait" class="photo-frame-blob__img" loading="eager">
+                </div>
+                <span class="frame-accent frame-accent--butterfly">🦋</span>
+                <span class="frame-accent frame-accent--flower">🌸</span>
+                <span class="frame-accent frame-accent--dust">✨</span>
+                <span class="frame-accent frame-accent--star">⭐</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Glass Caption Card -->
+          <div class="glass-caption-card" id="glass-caption" style="display: none;">
+            <h2 class="glass-caption-card__title">✨ Keep Smiling, Priyanka! ✨</h2>
+            <p class="glass-caption-card__subtitle">Wishing you endless happiness, wonderful memories, and an amazing year ahead. 🌸</p>
+          </div>
+        </div>
+
+        <!-- ── SECTION: MINI WISH CARDS ── -->
+        <div class="gift-section gift-section--wishes-mini reveal-section">
+          <div class="mini-wish-cards">
+            <div class="mini-wish-card" style="--card-color: #FFE4EC; transform: rotate(-3deg);">🌸 Stay Happy</div>
+            <div class="mini-wish-card" style="--card-color: #E0F4FF; transform: rotate(2deg);">🌈 Keep Smiling</div>
+            <div class="mini-wish-card" style="--card-color: #FFF6E0; transform: rotate(-1.5deg);">✨ Shine Bright</div>
+          </div>
+        </div>
+
+        <!-- ── SECTION: REPLY ── -->
+        <div class="gift-section gift-section--reply reveal-section">
+          <div class="reply-glass-panel" id="reply-box">
+            <h3 class="reply-glass-panel__title">💌 Leave a Little Message</h3>
+            <p class="reply-glass-panel__subtitle">"If you enjoyed this little surprise, send something back ✨"</p>
+            <textarea id="reply-input" class="blob-textarea" placeholder="Write your reply here... 🌸" rows="3"></textarea>
+            <button id="reply-btn" class="btn-fantasy-wa">
+              <span class="btn-fantasy-wa__shine"></span>
+              <span>✨ Send on WhatsApp ✨</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── SECTION 1: MEMORY COLLECTION ── -->
+        <div class="gift-section gift-section--memories reveal-section">
+          <span class="label">Chapter Bonus ✦</span>
+          <h2 class="heading-page">📸 Memory Collection</h2>
+          <p class="subtitle">Tap any photo to view fullscreen</p>
+          <div class="memory-polaroid-grid">
+            <div class="memory-polaroid" style="transform: rotate(-3deg);">
+              <div class="memory-polaroid__img">
+                <img src="assets/images/photos/5.webp" alt="Favorite Click" class="memory-polaroid__photo" loading="lazy">
+              </div>
+              <p class="memory-polaroid__caption">Favorite Click ✨</p>
+            </div>
+            <div class="memory-polaroid" style="transform: rotate(2.5deg);">
+              <div class="memory-polaroid__img">
+                <img src="assets/images/photos/6.webp" alt="Golden Smile" class="memory-polaroid__photo" loading="lazy">
+              </div>
+              <p class="memory-polaroid__caption">Golden Smile 🌼</p>
+            </div>
+            <div class="memory-polaroid" style="transform: rotate(-2deg);">
+              <div class="memory-polaroid__img">
+                <img src="assets/images/photos/7.webp" alt="Shining Moment" class="memory-polaroid__photo" loading="lazy">
+              </div>
+              <p class="memory-polaroid__caption">Shining Moment 🌟</p>
+            </div>
+            <div class="memory-polaroid" style="transform: rotate(3deg);">
+              <div class="memory-polaroid__img">
+                <img src="assets/images/photos/8.webp" alt="Pure Happiness" class="memory-polaroid__photo" loading="lazy">
+              </div>
+              <p class="memory-polaroid__caption">Pure Happiness 🎂</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SECTION 2: PLAYLIST ── -->
+        <div class="gift-section gift-section--playlist reveal-section">
+          <h2 class="heading-page">🎵 Favorite Track</h2>
+          <p class="subtitle">A special song dedicated to you 🎶</p>
+          
+          <div class="tu-jaane-na-card" id="tu-jaane-na-card">
+            <div class="tu-jaane-na-card__artwork">
+              <span class="artwork-icon">🎵</span>
+              <span class="artwork-sparkle">✨</span>
+            </div>
+            <div class="tu-jaane-na-card__info">
+              <h3 class="tu-jaane-na-card__title">Tu Jaane Na</h3>
+              <p class="tu-jaane-na-card__artist">Atif Aslam • Pritam</p>
+            </div>
+            <button class="tu-jaane-na-card__play-btn" id="tu-jaane-na-play-btn" aria-label="Play Tu Jaane Na">
+              <span>▶</span>
+            </button>
+          </div>
+
+          <a class="btn-youtube-official" href="https://www.youtube.com/watch?v=P8PWN1OmZOA" target="_blank" rel="noopener">
+            <span class="yt-icon">▶</span>
+            <span>Open Official YouTube Video</span>
+          </a>
+        </div>
+
+        <!-- ── SECTION 3: BIRTHDAY WISHES ── -->
+        <div class="gift-section gift-section--notes reveal-section">
+          <h2 class="heading-page">⭐ Birthday Wishes</h2>
+          <div class="handwritten-notes">
+            <div class="handwritten-note" style="transform: rotate(-2deg);">May every day bring you closer to your dreams! 🌟</div>
+            <div class="handwritten-note" style="transform: rotate(1.5deg);">You deserve all the happiness in the world 🌸</div>
+            <div class="handwritten-note" style="transform: rotate(-1deg);">Keep being the amazing person you are! ✨</div>
+            <div class="handwritten-note" style="transform: rotate(2deg);">Here's to another year of wonderful memories 🎂</div>
+            <div class="handwritten-note" style="transform: rotate(-2.5deg);">Your smile lights up everyone's day! 💖</div>
+          </div>
+        </div>
+
+        <!-- ── SECTION 4: LITTLE THINGS ── -->
+        <div class="gift-section gift-section--chips reveal-section">
+          <h2 class="heading-page">🌸 Little Things</h2>
+          <div class="little-chips">
+            <span class="little-chip" style="--chip-color: #FFE4EC;">Stay Happy 😊</span>
+            <span class="little-chip" style="--chip-color: #E0F4FF;">Smile More 😁</span>
+            <span class="little-chip" style="--chip-color: #FFF6E0;">Dream Big 🌟</span>
+            <span class="little-chip" style="--chip-color: #F0FFE0;">Eat Cake 🍰</span>
+            <span class="little-chip" style="--chip-color: #F5E0FF;">Keep Winning 🏆</span>
+            <span class="little-chip" style="--chip-color: #FFE8D8;">Spread Joy 🌈</span>
+            <span class="little-chip" style="--chip-color: #DFFFF0;">Be Kind 💖</span>
+          </div>
+        </div>
+
+        <!-- ── SECTION 5: CELEBRATION ── -->
+        <div class="gift-section gift-section--celebration reveal-section">
+          <div class="celebration-zone" id="celebration-zone">
+            <span class="celebration-emoji" style="left: 10%; animation-delay: 0s;">🎈</span>
+            <span class="celebration-emoji" style="left: 25%; animation-delay: 0.3s;">✨</span>
+            <span class="celebration-emoji" style="left: 40%; animation-delay: 0.6s;">💖</span>
+            <span class="celebration-emoji" style="left: 55%; animation-delay: 0.9s;">🎉</span>
+            <span class="celebration-emoji" style="left: 70%; animation-delay: 1.2s;">🌸</span>
+            <span class="celebration-emoji" style="left: 85%; animation-delay: 1.5s;">⭐</span>
+            <span class="celebration-emoji" style="left: 15%; animation-delay: 0.4s;">🦋</span>
+            <span class="celebration-emoji" style="left: 60%; animation-delay: 0.8s;">🎀</span>
+            <span class="celebration-emoji" style="left: 80%; animation-delay: 1.1s;">💫</span>
+            <span class="celebration-emoji" style="left: 35%; animation-delay: 1.4s;">🎈</span>
+          </div>
+          <h2 class="heading-page" style="text-align: center;">🎉 Celebration! 🎉</h2>
+          <p class="subtitle" style="text-align: center;">You made it to the end!</p>
+        </div>
+
+        <!-- ── ENDING SECTION ── -->
+        <div class="gift-section gift-section--ending reveal-section">
+          <div class="ending-card">
+            <p class="ending-card__main">✨ Thank you for visiting this little birthday world. ✨</p>
+            <p class="ending-card__sub">Hope this made you smile.</p>
+            <p class="ending-card__wish">Have an amazing birthday, Priyanka! 🌸</p>
+            <p class="ending-card__credit">Made with ❤️ by Subhankar</p>
+          </div>
+          <div class="ending-stars" aria-hidden="true">
+            <span style="top:10%;left:15%;">⭐</span>
+            <span style="top:20%;right:12%;">✦</span>
+            <span style="top:40%;left:8%;">✧</span>
+            <span style="top:55%;right:20%;">⭐</span>
+            <span style="top:70%;left:25%;">✦</span>
+            <span style="top:80%;right:10%;">✧</span>
+          </div>
+        </div>
+
+        <!-- Floating Magic Collectibles (fixed inside scroll) -->
+        <div class="magic-collectibles-fixed" aria-label="Magical Collectibles">
+          <button class="magic-collectible" data-popup="memories" aria-label="Memories">
+            📸<span class="magic-collectible__label">Memories</span>
+          </button>
+          <button class="magic-collectible" data-popup="wishes" aria-label="Wishes">
+            ⭐<span class="magic-collectible__label">Wishes</span>
+          </button>
+          <button class="magic-collectible" data-popup="playlist" aria-label="Playlist">
+            🎵<span class="magic-collectible__label">Playlist</span>
+          </button>
+          <button class="magic-collectible" data-popup="surprise" aria-label="Surprise">
+            🎁<span class="magic-collectible__label">Surprise</span>
+          </button>
+        </div>
+
+        <div class="page__safe-bottom" style="height: 60px;"></div>
+      </div>
+
+      <!-- Collectible Modal Popup -->
+      <div class="collectible-modal" id="collectible-modal" style="display: none;">
+        <div class="collectible-modal__card">
+          <button class="collectible-modal__close" id="modal-close">✕</button>
+          <h3 class="collectible-modal__title" id="modal-title"></h3>
+          <div class="collectible-modal__body" id="modal-body"></div>
+        </div>
+      </div>
+
+      <button id="share-btn" class="btn btn--secondary btn--lg btn--full" style="display: none;">Share this experience 💌</button>
+    </section>
+
+    <!-- Scene Transition Overlay -->
+    <div class="scene-transition-overlay" id="scene-overlay" aria-hidden="true"></div>
+
+  </div>
+
+  <!-- GSAP & Motion Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="js/core/app.js"></script>
+
+</body>
+</html>

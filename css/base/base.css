@@ -1,0 +1,20 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   STYLE.CSS — Master Stylesheet
+   Layer 3: Visual Design System
+   
+   Import order:
+   1. Google Fonts
+   2. Variables (tokens)
+   3. Layout (structure)
+   4. Components (reusable)
+   5. Pages (page-specific)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@import 'variables.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'pages.css';
+@import 'animations.css';
+@import 'media.css';

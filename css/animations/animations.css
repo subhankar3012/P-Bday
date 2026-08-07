@@ -1,0 +1,173 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ANIMATIONS.CSS — Motion Design & Keyframes
+   Layer 5 — Motion Design & Cinematic Animations
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* ═══════════════════════════════════════
+   1. CONTINUOUS FLOATING ANIMATIONS
+   ═══════════════════════════════════════ */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-1.5deg);
+  }
+}
+
+@keyframes float-rotate {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   2. AMBIENT GLOW & BREATHING
+   ═══════════════════════════════════════ */
+@keyframes blob-breathe {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.12) translate(10px, -10px);
+    opacity: 0.45;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    filter: blur(55px);
+  }
+  50% {
+    opacity: 0.65;
+    filter: blur(65px);
+  }
+}
+
+/* ═══════════════════════════════════════
+   3. CANDLE FLAME FLICKERING
+   ═══════════════════════════════════════ */
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: translateX(-50%) scale(1) rotate(-1deg);
+    filter: drop-shadow(0 0 12px rgba(232, 200, 122, 0.8));
+  }
+  25% {
+    transform: translateX(-52%) scale(1.08) rotate(2deg);
+    filter: drop-shadow(0 0 18px rgba(255, 154, 118, 0.9));
+  }
+  50% {
+    transform: translateX(-48%) scale(0.95) rotate(-2deg);
+    filter: drop-shadow(0 0 10px rgba(232, 200, 122, 0.7));
+  }
+  75% {
+    transform: translateX(-51%) scale(1.04) rotate(1deg);
+    filter: drop-shadow(0 0 16px rgba(244, 160, 176, 0.85));
+  }
+}
+
+/* ═══════════════════════════════════════
+   4. MICRO-INTERACTION & FOCUS SHIMMER
+   ═══════════════════════════════════════ */
+@keyframes focus-breathe {
+  0%, 100% {
+    box-shadow: 
+      inset 0 2px 6px rgba(180, 140, 120, 0.1),
+      0 0 0 4px var(--color-primary-glow);
+  }
+  50% {
+    box-shadow: 
+      inset 0 2px 6px rgba(180, 140, 120, 0.1),
+      0 0 0 8px rgba(244, 160, 176, 0.25);
+  }
+}
+
+@keyframes ribbon-sway {
+  0%, 100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(1.5deg) scaleY(1.02);
+  }
+}
+
+/* ═══════════════════════════════════════
+   5. UTILITY CLASS ASSIGNMENTS
+   ═══════════════════════════════════════ */
+.anim-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.anim-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.anim-float-rotate {
+  animation: float-rotate 5s ease-in-out infinite;
+}
+
+.anim-blob-breathe {
+  animation: blob-breathe 8s ease-in-out infinite;
+}
+
+.anim-glow-pulse {
+  animation: glow-pulse 3.5s ease-in-out infinite;
+}
+
+.cake__flame:not(.blown) {
+  animation: flame-flicker 1.8s ease-in-out infinite;
+}
+
+.input:focus {
+  animation: focus-breathe 2.5s ease-in-out infinite;
+}
+
+.gift-box__ribbon-v {
+  animation: ribbon-sway 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════
+   6. CINEMATIC SCENE TRANSITION OVERLAY
+   ═══════════════════════════════════════ */
+.scene-transition-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-modal);
+  background: radial-gradient(circle at center, #FFFFFF 0%, rgba(255, 248, 240, 0.8) 100%);
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, transform, filter;
+}
+
+/* ═══════════════════════════════════════
+   7. ACCESSIBILITY — PREFERS REDUCED MOTION
+   ═══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  .anim-float-gentle,
+  .anim-float-slow,
+  .anim-float-rotate,
+  .anim-blob-breathe,
+  .anim-glow-pulse,
+  .cake__flame {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

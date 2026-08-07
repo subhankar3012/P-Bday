@@ -1,0 +1,18 @@
+{
+  "name": "Moonlight Birthday Journey — Priyanka's Birthday",
+  "short_name": "Priyanka Bday",
+  "description": "A handcrafted interactive mobile birthday experience created with love for Priyanka by Subhankar.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFF0F4",
+  "theme_color": "#FFFDF9",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

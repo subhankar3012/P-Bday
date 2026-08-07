@@ -1,0 +1,343 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   VARIABLES.CSS — Visual Design Tokens
+   Layer 4 — Premium Handcrafted UI Transformation
+   
+   Inspired by Pinterest Mobile UI, Disney Storybooks,
+   Cozy Diary Aesthetics, Cute Mobile Games, and Soft Crafts.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root {
+  /* ── Viewport ── */
+  --vh: 1vh;
+
+  /* ── Spacing Scale (Organic & Generous) ── */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+
+  /* ── Page Layout ── */
+  --page-px:        1.25rem;
+  --page-px-lg:     1.5rem;
+  --section-gap:    1.75rem;
+  --header-height:  4rem;
+  --footer-height:  5rem;
+
+  /* ═══════════════════════════════════════
+     COLOR PALETTE — Handcrafted Warm & Cozy
+     ═══════════════════════════════════════ */
+
+  /* ── Backgrounds (Warm Multi-layer Soft Gradients) ── */
+  --color-bg:              #FFF8F0;    /* Warm Cream */
+  --color-bg-warm:         #FFF4E8;    /* Soft Vanilla */
+  --color-bg-soft:         #FFFAF3;    /* Soft Ivory */
+  --color-bg-page2:        #FFF0E8;    /* Peachy Warm — Memory Lane */
+  --color-bg-page3:        #F4EFFF;    /* Soft Lavender Mist — Games */
+  --color-bg-page4:        #FFF0F4;    /* Rose Mist — Cake */
+  --color-bg-page5:        #FFFBF2;    /* Parchment — Letter */
+  --color-bg-page6:        #F8F3FF;    /* Lilac Dream — Gift */
+
+  /* ── Surfaces (Journal Paper & Layered Surfaces) ── */
+  --color-surface:         #FFFFFF;
+  --color-surface-warm:    #FFF8F0;
+  --color-surface-alt:     #FFEFE6;
+  --color-surface-elevated:#FFFFFF;
+  --color-surface-paper:   #FFFCF6;    /* Storybook Notebook Paper */
+  --color-surface-card:    #FFFFFF;
+  --color-surface-blob:    #FFF7F2;
+
+  /* ── Primary — Blush & Rose Pink ── */
+  --color-primary:         #F4A0B0;    /* Blush Rose */
+  --color-primary-soft:    #FFCFDA;    /* Soft Pink */
+  --color-primary-deep:    #E88297;    /* Deeper Rose */
+  --color-primary-pale:    #FFE8EE;    /* Pale Pink */
+  --color-primary-glow:    rgba(244, 160, 176, 0.35);
+
+  /* ── Secondary — Soft Lavender ── */
+  --color-secondary:       #C8B6E2;    /* Soft Lavender */
+  --color-secondary-soft:  #DFD4F2;    /* Light Lilac */
+  --color-secondary-deep:  #A28FCA;    /* Deeper Lavender */
+  --color-secondary-pale:  #F2ECFF;    /* Pale Lilac */
+  --color-secondary-glow:  rgba(200, 182, 226, 0.35);
+
+  /* ── Highlight — Warm Gold & Champagne ── */
+  --color-gold:            #E8C87A;    /* Warm Gold */
+  --color-gold-soft:       #F3DC98;    /* Champagne */
+  --color-gold-deep:       #D4AB46;    /* Rich Gold */
+  --color-gold-pale:       #FFF6E0;    /* Pale Gold */
+  --color-gold-glow:       rgba(232, 200, 122, 0.4);
+
+  /* ── Peach ── */
+  --color-peach:           #FFD4B8;    /* Soft Peach */
+  --color-peach-soft:      #FFE6D8;    /* Light Peach */
+  --color-peach-deep:      #F0B08C;    /* Warm Peach */
+
+  /* ── Mint (Supporting Cozy Craft Color) ── */
+  --color-mint:            #B8E8D0;    /* Soft Mint */
+  --color-mint-soft:       #D8F4E6;    /* Light Mint */
+
+  /* ── Organic Borders ── */
+  --color-border:          rgba(224, 192, 172, 0.35);
+  --color-border-subtle:   rgba(224, 192, 172, 0.18);
+  --color-border-warm:     rgba(244, 160, 176, 0.32);
+  --color-border-card:     rgba(235, 200, 180, 0.38);
+
+  /* ── Text ── */
+  --color-text:            #3D2B1F;    /* Warm Espresso */
+  --color-text-secondary:  #6B5744;    /* Warm Brown */
+  --color-text-muted:      #8D7D6F;    /* Muted Taupe */
+  --color-text-dim:        #B8ACA2;    /* Soft Gray */
+  --color-text-light:      #D8CFC6;    /* Whisper */
+  --color-text-on-primary: #FFFFFF;
+  --color-text-accent:     #E87890;    /* Rose Accent Text */
+
+  /* ── Overlays ── */
+  --color-overlay:         rgba(61, 43, 31, 0.45);
+  --color-overlay-light:   rgba(255, 248, 240, 0.85);
+
+  /* ── Feedback ── */
+  --color-error:           #E87878;
+  --color-success:         #7BC88C;
+  --color-focus-ring:      rgba(244, 160, 176, 0.45);
+
+  /* ═══════════════════════════════════════
+     TYPOGRAPHY — Cute & Handcrafted
+     ═══════════════════════════════════════ */
+
+  /* ── Font Families ── */
+  --font-display:  'Fredoka', 'Dancing Script', cursive; /* Playful Headings */
+  --font-hand:     'Caveat', cursive;                   /* Storybook Notes & Labels */
+  --font-primary:  'Quicksand', 'Nunito', sans-serif;   /* Soft Rounded Body */
+
+  /* ── Font Sizes ── */
+  --text-2xs:  0.6875rem; /* 11px */
+  --text-xs:   0.8125rem; /* 13px */
+  --text-sm:   0.9375rem; /* 15px */
+  --text-base: 1.0625rem; /* 17px */
+  --text-lg:   1.1875rem; /* 19px */
+  --text-xl:   1.3125rem; /* 21px */
+  --text-2xl:  1.625rem;  /* 26px */
+  --text-3xl:  1.875rem;  /* 30px */
+  --text-4xl:  2.375rem;  /* 38px */
+  --text-5xl:  2.875rem;  /* 46px */
+  --text-6xl:  3.5rem;    /* 56px */
+
+  /* ── Line Heights ── */
+  --leading-none:    1;
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.55;
+  --leading-relaxed: 1.7;
+  --leading-loose:   1.9;
+
+  /* ── Font Weights ── */
+  --weight-normal:  400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
+  --weight-extra:   800;
+
+  /* ═══════════════════════════════════════
+     ORGANIC SHAPE SYSTEM — Zero Boxiness
+     ═══════════════════════════════════════ */
+
+  --radius-xs:   0.5rem;    /*  8px */
+  --radius-sm:   0.75rem;   /* 12px */
+  --radius-md:   1rem;      /* 16px */
+  --radius-lg:   1.375rem;  /* 22px */
+  --radius-xl:   1.75rem;   /* 28px */
+  --radius-2xl:  2.25rem;   /* 36px */
+  --radius-3xl:  2.75rem;   /* 44px */
+  --radius-full: 9999px;
+
+  /* Organic Asymmetric & Blob Radii */
+  --radius-blob:       45% 55% 65% 35% / 40% 60% 40% 60%;
+  --radius-blob-2:     60% 40% 30% 70% / 50% 35% 65% 50%;
+  --radius-blob-3:     38% 62% 52% 48% / 58% 42% 58% 42%;
+  --radius-card-organic: 28px 44px 24px 38px / 38px 24px 44px 28px;
+  --radius-button-bubble: 32px 24px 38px 28px / 28px 38px 24px 32px;
+  --radius-input-handcrafted: 28px 34px 22px 30px / 30px 22px 34px 28px;
+
+  /* ═══════════════════════════════════════
+     DEPTH & LAYERED SHADOWS — Warm & Tactile
+     ═══════════════════════════════════════ */
+
+  --shadow-xs:   0 2px 6px rgba(180, 140, 120, 0.08);
+  --shadow-sm:   0 4px 12px rgba(180, 140, 120, 0.10);
+  --shadow-md:   0 8px 24px rgba(180, 140, 120, 0.12);
+  --shadow-lg:   0 14px 36px rgba(180, 140, 120, 0.14);
+  --shadow-xl:   0 20px 50px rgba(180, 140, 120, 0.18);
+
+  /* Special Handcrafted Component Depth */
+  --shadow-button-bubble: 
+    inset 0 3px 6px rgba(255, 255, 255, 0.75),
+    inset 0 -3px 6px rgba(180, 100, 120, 0.22),
+    0 8px 22px rgba(244, 160, 176, 0.38);
+
+  --shadow-button-pressed: 
+    inset 0 2px 5px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(244, 160, 176, 0.2);
+
+  --shadow-card-paper: 
+    inset 0 1px 3px rgba(255, 255, 255, 0.9),
+    0 12px 32px -4px rgba(180, 140, 120, 0.16),
+    0 4px 12px rgba(180, 140, 120, 0.08);
+
+  --shadow-input-inner: 
+    inset 0 3px 8px rgba(180, 140, 120, 0.12),
+    inset 0 1px 3px rgba(180, 140, 120, 0.18),
+    0 4px 14px rgba(244, 160, 176, 0.12);
+
+  --shadow-glow-pink: 0 0 45px rgba(244, 160, 176, 0.35);
+  --shadow-glow-gold: 0 0 45px rgba(232, 200, 122, 0.40);
+  --shadow-glow-lavender: 0 0 45px rgba(200, 182, 226, 0.35);
+  --shadow-inner: inset 0 2px 5px rgba(180, 140, 120, 0.1);
+
+  /* ═══════════════════════════════════════
+     Z-INDEX LAYERS
+     ═══════════════════════════════════════ */
+
+  --z-decoration: -1;
+  --z-base:        1;
+  --z-content:     10;
+  --z-interactive: 20;
+  --z-floating:    50;
+  --z-overlay:     100;
+  --z-modal:       200;
+  --z-toast:       300;
+  --z-max:         999;
+
+  /* ═══════════════════════════════════════
+     TRANSITIONS & TOUCH
+     ═══════════════════════════════════════ */
+
+  --ease-default: cubic-bezier(0.34, 1.3, 0.64, 1);
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring:  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  --duration-instant: 100ms;
+  --duration-fast:    150ms;
+  --duration-normal:  300ms;
+  --duration-slow:    500ms;
+  --duration-page:    600ms;
+
+  /* ── Safe Areas ── */
+  --safe-top:    env(safe-area-inset-top, 0px);
+  --safe-right:  env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left:   env(safe-area-inset-left, 0px);
+
+  /* ── Mobile Touch Targets ── */
+  --touch-min: 44px;
+  --touch-comfortable: 52px;
+  --touch-large: 60px;
+
+  /* ── Page ── */
+  --page-max-width: 430px;
+  --page-min-height: 100%;
+
+  /* ═══════════════════════════════════════
+     DECORATIVE & CRAFT TOKENS
+     ═══════════════════════════════════════ */
+  --deco-dot-color: rgba(244, 160, 176, 0.2);
+  --deco-dot-size: 2px;
+  --deco-dot-spacing: 20px;
+  --tape-color: rgba(255, 220, 195, 0.85);
+  --tape-width: 64px;
+  --tape-height: 24px;
+}
+
+/* ═══════════════════════════════════════
+   DYNAMIC THEME OVERRIDES
+   ═══════════════════════════════════════ */
+
+/* 1. Blush Pink (Default) */
+[data-theme="blush-pink"], :root {
+  --color-primary: #FFB6C9;
+  --color-primary-soft: #FFCFDA;
+  --color-primary-deep: #C84B68;
+  --color-primary-pale: #FFF0F4;
+  --color-primary-glow: rgba(255, 182, 201, 0.45);
+  --color-bg-page4: #FFF0F4;
+  --shadow-glow-pink: 0 0 45px rgba(255, 182, 201, 0.45);
+}
+
+/* 2. Lavender */
+[data-theme="lavender"] {
+  --color-primary: #C9B6FF;
+  --color-primary-soft: #E0D5FF;
+  --color-primary-deep: #6B4BC8;
+  --color-primary-pale: #F5F0FF;
+  --color-primary-glow: rgba(201, 182, 255, 0.45);
+  --color-bg-page4: #F5F0FF;
+  --color-text-accent: #6B4BC8;
+  --shadow-glow-pink: 0 0 45px rgba(201, 182, 255, 0.45);
+}
+
+/* 3. Rose Pink */
+[data-theme="rose-pink"] {
+  --color-primary: #FF7EB9;
+  --color-primary-soft: #FFB6D8;
+  --color-primary-deep: #C82B76;
+  --color-primary-pale: #FFF0F7;
+  --color-primary-glow: rgba(255, 126, 185, 0.45);
+  --color-bg-page4: #FFF0F7;
+  --color-text-accent: #C82B76;
+  --shadow-glow-pink: 0 0 45px rgba(255, 126, 185, 0.45);
+}
+
+/* 4. Peach */
+[data-theme="peach"] {
+  --color-primary: #FFC7A6;
+  --color-primary-soft: #FFE2D1;
+  --color-primary-deep: #C8622B;
+  --color-primary-pale: #FFF5F0;
+  --color-primary-glow: rgba(255, 199, 166, 0.45);
+  --color-bg-page4: #FFF5F0;
+  --color-text-accent: #C8622B;
+  --shadow-glow-pink: 0 0 45px rgba(255, 199, 166, 0.45);
+}
+
+/* 5. Baby Blue */
+[data-theme="baby-blue"] {
+  --color-primary: #A9D9FF;
+  --color-primary-soft: #D4EDFF;
+  --color-primary-deep: #2B76C8;
+  --color-primary-pale: #F0F8FF;
+  --color-primary-glow: rgba(169, 217, 255, 0.45);
+  --color-bg-page4: #F0F8FF;
+  --color-text-accent: #2B76C8;
+  --shadow-glow-pink: 0 0 45px rgba(169, 217, 255, 0.45);
+}
+
+/* 6. Butter Yellow */
+[data-theme="butter-yellow"] {
+  --color-primary: #FFE89A;
+  --color-primary-soft: #FFF3C4;
+  --color-primary-deep: #B89018;
+  --color-primary-pale: #FFFDF0;
+  --color-primary-glow: rgba(255, 232, 154, 0.5);
+  --color-bg-page4: #FFFDF0;
+  --color-text-accent: #B89018;
+  --shadow-glow-pink: 0 0 45px rgba(255, 232, 154, 0.5);
+}
+
+/* 7. Mint Green */
+[data-theme="mint-green"] {
+  --color-primary: #BFF7D4;
+  --color-primary-soft: #DEFAEA;
+  --color-primary-deep: #28A85E;
+  --color-primary-pale: #F0FFF5;
+  --color-primary-glow: rgba(191, 247, 212, 0.45);
+  --color-bg-page4: #F0FFF5;
+  --color-text-accent: #28A85E;
+  --shadow-glow-pink: 0 0 45px rgba(191, 247, 212, 0.45);
+}

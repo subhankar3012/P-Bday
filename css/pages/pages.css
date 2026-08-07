@@ -1,0 +1,266 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PAGES.CSS — Page-Specific Visual Compositions
+   Layer 4 — Premium Handcrafted UI Transformation
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* ═══════════════════════════════════════
+   1. PAGE 1 — THE SECRET ENTRANCE (page--entrance)
+   ═══════════════════════════════════════ */
+.page--entrance .page__header {
+  padding-top: var(--space-8);
+}
+
+.page--entrance .page__hero {
+  flex: 1;
+  gap: var(--space-6);
+}
+
+.page--entrance .passcode-group {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.page--entrance .passcode-group__label {
+  font-family: var(--font-hand);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-secondary);
+}
+
+.page--entrance .page__action {
+  padding-bottom: var(--space-6);
+}
+
+/* Background floating organic halos */
+.page--entrance .page__decoration::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(244, 160, 176, 0.28) 0%, transparent 70%);
+  border-radius: var(--radius-blob);
+  pointer-events: none;
+}
+
+.page--entrance .page__decoration::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -40px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(232, 200, 122, 0.25) 0%, transparent 70%);
+  border-radius: var(--radius-blob-2);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════
+   2. PAGE 2 — MEMORY LANE (page--memories)
+   ═══════════════════════════════════════ */
+.page--memories .page__header {
+  padding-bottom: var(--space-2);
+}
+
+.page--memories .page__interactive {
+  flex: 1;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.page--memories .memory-caption {
+  font-family: var(--font-hand);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.page--memories .page__decoration::before {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(255, 212, 184, 0.35) 0%, transparent 70%);
+  border-radius: var(--radius-blob-3);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════
+   3. PAGE 3 — MINI GAMES (page--games)
+   ═══════════════════════════════════════ */
+.page--games .page__interactive {
+  gap: var(--space-5);
+  justify-content: flex-start;
+  padding-top: var(--space-2);
+}
+
+.page--games .game-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--space-4);
+  padding: 0 var(--space-2);
+}
+
+.page--games .page__decoration::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -50px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(200, 182, 226, 0.3) 0%, transparent 70%);
+  border-radius: var(--radius-blob);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════
+   4. PAGE 4 — CAKE CEREMONY (page--cake)
+   ═══════════════════════════════════════ */
+.page--cake .page__hero {
+  flex: 1;
+  gap: var(--space-6);
+  justify-content: center;
+}
+
+.page--cake .cake-instruction {
+  font-family: var(--font-hand);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-secondary);
+  text-align: center;
+  background: var(--color-surface-paper);
+  padding: 6px 20px;
+  border-radius: var(--radius-full);
+  border: 1.5px dashed var(--color-primary-soft);
+  box-shadow: 0 4px 12px rgba(244, 160, 176, 0.15);
+}
+
+.page--cake .page__decoration::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 208, 218, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.page--cake .page__decoration::after {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(232, 200, 122, 0.28) 0%, transparent 70%);
+  border-radius: var(--radius-blob-2);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════
+   5. PAGE 5 — LETTER (page--letter)
+   ═══════════════════════════════════════ */
+.page--letter .page__interactive {
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.page--letter .letter {
+  width: 100%;
+  max-width: 360px;
+  height: 380px;
+  min-height: 320px;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page--letter .page__decoration::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255, 250, 240, 0.9) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ═══════════════════════════════════════
+   6. PAGE 6 — FINAL GIFT (page--gift)
+   ═══════════════════════════════════════ */
+.page--gift .page__hero {
+  flex: 1;
+  gap: var(--space-6);
+}
+
+.page--gift .final-reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.page--gift .final-message {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-text);
+  text-align: center;
+  background: var(--color-surface-paper);
+  padding: var(--space-4) var(--space-6);
+  border-radius: 28px 20px 32px 24px / 24px 32px 20px 28px;
+  border: 2px solid var(--color-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.page--gift .page__action {
+  gap: var(--space-4);
+}
+
+.page--gift .page__decoration::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(200, 182, 226, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.page--gift .page__decoration::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(232, 200, 122, 0.35) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.4;
+}
