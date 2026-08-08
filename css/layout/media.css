@@ -2174,3 +2174,798 @@ body.popup-open footer {
   width: 100%;
   margin-top: 20px;
 }
+
+/* ━━━━━ BEHIND THE SCENES SECRET PAGE & BUTTON STYLES ━━━━━ */
+
+/* Mysterious & Magical "Behind the Scenes ✨" Button */
+.btn-post-behind-scenes {
+  background: linear-gradient(135deg, rgba(255, 235, 245, 0.98) 0%, rgba(243, 229, 245, 0.98) 50%, rgba(255, 243, 224, 0.98) 100%) !important;
+  color: #8E24AA !important;
+  font-family: var(--font-display) !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  border: 2.5px solid rgba(186, 104, 200, 0.45) !important;
+  border-radius: 28px !important;
+  padding: 14px 24px !important;
+  min-height: 54px !important;
+  width: 100% !important;
+  box-shadow: 0 12px 32px rgba(186, 104, 200, 0.3), 0 0 20px rgba(255, 182, 217, 0.4) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  transition: all 0.3s var(--ease-bounce) !important;
+  touch-action: manipulation !important;
+  position: relative;
+  overflow: hidden;
+  animation: bts-breathe 2.8s ease-in-out infinite alternate !important;
+}
+
+@keyframes bts-breathe {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 28px rgba(186, 104, 200, 0.28), 0 0 15px rgba(255, 182, 217, 0.3);
+    border-color: rgba(186, 104, 200, 0.45);
+  }
+  100% {
+    transform: scale(1.025);
+    box-shadow: 0 16px 40px rgba(186, 104, 200, 0.45), 0 0 28px rgba(255, 126, 185, 0.6);
+    border-color: rgba(232, 120, 144, 0.8);
+  }
+}
+
+.btn-post-behind-scenes:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 18px 45px rgba(186, 104, 200, 0.5), 0 0 35px rgba(255, 126, 185, 0.7) !important;
+  border-color: #E87890 !important;
+}
+
+.btn-post-behind-scenes:active {
+  transform: scale(0.95) !important;
+}
+
+/* Secret Page Outer Scroll Wrapper */
+.bts-page-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at top center, #FFF0F5 0%, #FCE4EC 50%, #F8BBD0 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 80px 20px 60px 20px;
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.bts-container {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 90px;
+  padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+}
+
+/* Header */
+.bts-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.bts-flower-badge {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #8E24AA;
+  background: rgba(243, 229, 245, 0.85);
+  border: 1.5px solid rgba(186, 104, 200, 0.4);
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.bts-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--color-primary-deep, #E87890);
+  margin: 0 0 10px 0;
+  line-height: 1.25;
+  text-shadow: 0 4px 18px rgba(232, 120, 144, 0.25);
+}
+
+.bts-sparkle-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #FF7EB9, transparent);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* Intro Card */
+.bts-intro-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2.5px solid #FFFFFF;
+  border-radius: 28px;
+  padding: 32px 28px;
+  box-shadow: 0 18px 50px rgba(180, 140, 120, 0.22);
+  text-align: center;
+  margin-bottom: 32px;
+  box-sizing: border-box;
+}
+
+.bts-intro-lead {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: #3D2B1F;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.bts-intro-body {
+  font-family: var(--font-hand);
+  font-size: 1.18rem;
+  color: #5D4037;
+  margin: 0 0 14px 0;
+  line-height: 1.6;
+}
+
+.bts-note-box {
+  background: rgba(243, 229, 245, 0.6);
+  border: 2px dashed rgba(186, 104, 200, 0.45);
+  border-radius: 20px;
+  padding: 16px 20px;
+  margin-top: 18px;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #6A1B9A;
+  line-height: 1.5;
+}
+
+.bts-note-sub {
+  font-weight: 600;
+  color: #4A148C;
+  font-size: 1.08rem;
+}
+
+/* Cards Grid */
+.bts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 22px;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 480px) {
+  .bts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bts-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid #FFFFFF;
+  border-radius: 24px;
+  padding: 26px 22px;
+  box-shadow: 0 12px 36px rgba(180, 140, 120, 0.18);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s var(--ease-bounce);
+  box-sizing: border-box;
+}
+
+.bts-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(232, 120, 144, 0.3);
+  border-color: rgba(255, 126, 185, 0.7);
+}
+
+.bts-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bts-card-icon {
+  font-size: 2rem;
+  line-height: 1;
+  background: rgba(255, 240, 245, 0.9);
+  border-radius: 16px;
+  padding: 8px;
+  border: 1px solid rgba(255, 182, 201, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 126, 185, 0.15);
+}
+
+.bts-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-primary-deep, #E87890);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.bts-card-desc {
+  font-family: var(--font-hand);
+  font-size: 1.08rem;
+  color: #5D4037;
+  margin: 0 0 18px 0;
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.bts-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bts-chip {
+  background: linear-gradient(135deg, rgba(255, 235, 245, 0.9) 0%, rgba(243, 229, 245, 0.9) 100%);
+  border: 1.5px solid rgba(186, 104, 200, 0.35);
+  border-radius: 18px;
+  padding: 5px 13px;
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4A148C;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bts-chip:hover {
+  transform: scale(1.06);
+  background: linear-gradient(135deg, #FF7EB9 0%, #E8C87A 100%);
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* Footer Card */
+.bts-footer-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 2.5px solid #FFFFFF;
+  border-radius: 28px;
+  padding: 36px 28px;
+  box-shadow: 0 20px 60px rgba(180, 140, 120, 0.25);
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.bts-footer-flower {
+  font-size: 3rem;
+  margin-bottom: 8px;
+  animation: float-icon 2.5s ease-in-out infinite alternate;
+}
+
+.bts-footer-pre {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: #8E24AA;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.bts-footer-sub {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: #5D4037;
+  margin: 0 0 8px 0;
+}
+
+.bts-footer-idea {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  color: var(--color-primary-deep, #E87890);
+  margin: 0 0 16px 0;
+}
+
+.bts-footer-body {
+  font-family: var(--font-hand);
+  font-size: 1.18rem;
+  color: #3D2B1F;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.bts-footer-closing {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: #6B5744;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ━━━━━ INTERACTIVE LIVING TREE ARCHITECTURE STYLES ━━━━━ */
+
+.bts-tree-section {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 2.5px solid #FFFFFF;
+  border-radius: 28px;
+  padding: 32px 24px;
+  box-shadow: 0 20px 60px rgba(180, 140, 120, 0.24);
+  margin-bottom: 36px;
+  box-sizing: border-box;
+}
+
+.bts-tree-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bts-tree-badge {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2E7D32;
+  background: rgba(232, 245, 233, 0.9);
+  border: 1.5px solid rgba(129, 199, 132, 0.5);
+  padding: 5px 16px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+}
+
+.bts-tree-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--color-primary-deep, #E87890);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.bts-tree-sub {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: #5D4037;
+  margin: 0;
+}
+
+/* Legend Bar */
+.bts-tree-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 240, 245, 0.7);
+  border: 1.5px solid rgba(255, 182, 201, 0.4);
+  border-radius: 20px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+}
+
+.legend-item {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4A148C;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-icon {
+  font-size: 1.1rem;
+}
+
+/* Tree & Info Panel Layout */
+.bts-tree-main-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .bts-tree-main-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tree View Box */
+.bts-tree-view {
+  background: rgba(253, 242, 248, 0.6);
+  border: 2px solid rgba(244, 143, 177, 0.3);
+  border-radius: 20px;
+  padding: 16px;
+  max-height: 540px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.bts-tree-node {
+  margin: 4px 0;
+}
+
+.bts-tree-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+.bts-tree-row:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(232, 120, 144, 0.15);
+  transform: translateX(3px);
+}
+
+.bts-tree-row.active-node {
+  background: linear-gradient(135deg, rgba(255, 235, 245, 0.95) 0%, rgba(243, 229, 245, 0.95) 100%);
+  border: 1.5px solid rgba(186, 104, 200, 0.5);
+  box-shadow: 0 6px 16px rgba(186, 104, 200, 0.2);
+}
+
+.bts-tree-arrow {
+  font-size: 0.75rem;
+  color: #8E24AA;
+  width: 14px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.bts-tree-bullet {
+  font-size: 0.8rem;
+  color: #FF7EB9;
+  width: 14px;
+  text-align: center;
+}
+
+.bts-tree-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.bts-tree-name {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  color: #3D2B1F;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bts-tree-badge {
+  margin-left: auto;
+  font-family: var(--font-hand);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #6A1B9A;
+  background: rgba(243, 229, 245, 0.8);
+  border: 1px solid rgba(186, 104, 200, 0.3);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.bts-tree-children {
+  position: relative;
+  padding-left: 18px;
+  border-left: 2px dashed rgba(255, 126, 185, 0.35);
+  margin-left: 14px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.bts-tree-children.collapsed {
+  display: none;
+}
+
+/* Info Panel Card */
+.bts-tree-info-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 12px 36px rgba(180, 140, 120, 0.18);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.info-panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1.5px dashed rgba(255, 182, 201, 0.5);
+  padding-bottom: 12px;
+}
+
+.info-panel-icon {
+  font-size: 2.2rem;
+  background: rgba(255, 240, 245, 0.9);
+  border-radius: 16px;
+  padding: 8px;
+  border: 1px solid rgba(255, 182, 201, 0.5);
+}
+
+.info-panel-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-primary-deep, #E87890);
+  margin: 0;
+  word-break: break-word;
+}
+
+.info-panel-badge {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4A148C;
+  background: rgba(243, 229, 245, 0.9);
+  border: 1px solid rgba(186, 104, 200, 0.4);
+  padding: 3px 10px;
+  border-radius: 12px;
+  align-self: start;
+}
+
+.info-panel-desc {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: #5D4037;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.info-panel-placeholder {
+  text-align: center;
+  color: #6B5744;
+  padding: 20px 10px;
+}
+
+.info-placeholder-icon {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.info-placeholder-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-primary-deep, #E87890);
+  margin: 0 0 6px 0;
+}
+
+.info-placeholder-text {
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Project Summary Block */
+.bts-tree-summary-card {
+  background: linear-gradient(135deg, rgba(255, 235, 245, 0.8) 0%, rgba(243, 229, 245, 0.8) 100%);
+  border: 2px dashed rgba(186, 104, 200, 0.45);
+  border-radius: 20px;
+  padding: 22px 20px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.bts-summary-line {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #5D4037;
+  margin: 2px 0;
+}
+
+.bts-summary-final {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--color-primary-deep, #E87890);
+  margin: 10px 0 0 0;
+}
+
+/* ━━━━━ REAL ORGANIC LIVING TREE CANVAS STYLES ━━━━━ */
+
+.bts-organic-tree-section {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 2.5px solid #FFFFFF;
+  border-radius: 28px;
+  padding: 32px 24px;
+  box-shadow: 0 20px 60px rgba(180, 140, 120, 0.24);
+  margin-bottom: 36px;
+  box-sizing: border-box;
+}
+
+/* Toolbar & Legend */
+.bts-organic-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 240, 245, 0.75);
+  border: 1.5px solid rgba(255, 182, 201, 0.45);
+  border-radius: 20px;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+}
+
+.bts-organic-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-trunk { background: #8D6E63; box-shadow: 0 0 8px #8D6E63; }
+.dot-branch { background: #AB47BC; box-shadow: 0 0 8px #AB47BC; }
+.dot-code { background: #66BB6A; box-shadow: 0 0 8px #66BB6A; }
+.dot-style { background: #EC407A; box-shadow: 0 0 8px #EC407A; }
+.dot-media { background: #FFA726; box-shadow: 0 0 8px #FFA726; }
+
+.bts-organic-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-tree-ctrl {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(186, 104, 200, 0.4);
+  border-radius: 14px;
+  padding: 6px 14px;
+  font-family: var(--font-hand);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #6A1B9A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-tree-ctrl:hover {
+  background: linear-gradient(135deg, #FF7EB9 0%, #E8C87A 100%);
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-tree-ctrl:active {
+  transform: scale(0.95);
+}
+
+/* Canvas Viewport Container */
+.bts-organic-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  background: radial-gradient(circle at center, #FFF5F8 0%, #FCE4EC 60%, #F8BBD0 100%);
+  border: 2.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(220, 150, 170, 0.15), 0 14px 40px rgba(180, 140, 120, 0.18);
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .bts-organic-canvas-container {
+    height: 480px;
+  }
+}
+
+#bts-organic-tree-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  touch-action: none;
+}
+
+#bts-organic-tree-canvas:active {
+  cursor: grabbing;
+}
+
+/* Floating Glass Info Panel Overlay */
+.bts-organic-info-card {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  max-width: 320px;
+  width: calc(100% - 40px);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid #FFFFFF;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 16px 45px rgba(180, 140, 120, 0.28);
+  z-index: 10;
+  transition: all 0.3s var(--ease-bounce);
+  box-sizing: border-box;
+}
+
+.bts-info-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #8E24AA;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.bts-info-close:hover {
+  opacity: 1;
+}
+
+/* Hint Bar */
+.bts-canvas-hint {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 182, 201, 0.5);
+  border-radius: 16px;
+  padding: 5px 16px;
+  font-family: var(--font-hand);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6A1B9A;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(186, 104, 200, 0.15);
+}
+
+
+
