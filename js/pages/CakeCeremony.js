@@ -16,10 +16,6 @@ export function initCakeCeremonyPage(pageManager, navigation) {
   const continueBtn = $('[data-nav="next"]', page);
 
   let candlesBlown = 0;
-  let micStream = null;
-  let audioCtx = null;
-  let analyser = null;
-  let micInterval = null;
 
   function blowCandle(flame) {
     if (!flame || flame.classList.contains('blown')) return;
@@ -68,7 +64,6 @@ export function initCakeCeremonyPage(pageManager, navigation) {
   }
 
   function onAllCandlesBlown() {
-    stopMic();
     stateManager.set('candlesBlown', flames.length);
     stateManager.unlockPage(5);
 
@@ -85,63 +80,6 @@ export function initCakeCeremonyPage(pageManager, navigation) {
         { scale: 0.9, boxShadow: '0 0 0px var(--color-primary)' },
         { scale: 1, boxShadow: '0 0 25px var(--color-primary-glow)', duration: 0.6, ease: 'back.out(1.5)' }
       );
-    }
-  }
-
-  async function initMic() {
-    if (candlesBlown >= flames.length) return;
-    try {
-      if (!navigator.mediaDevices?.getUserMedia) return;
-      micStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      audioCtx = new AudioCtx();
-      const source = audioCtx.createMediaStreamSource(micStream);
-      analyser = audioCtx.createAnalyser();
-      analyser.fftSize = 256;
-      source.connect(analyser);
-
-      const dataArray = new Uint8Array(analyser.frequencyBinCount);
-
-      micInterval = setInterval(() => {
-        if (candlesBlown >= flames.length) {
-          stopMic();
-          return;
-        }
-
-        analyser.getByteFrequencyData(dataArray);
-        let sum = 0;
-        for (let i = 0; i < dataArray.length; i++) {
-          sum += dataArray[i];
-        }
-        const average = sum / dataArray.length;
-
-        if (average > 40) {
-          const unblown = flames.filter(f => !f.classList.contains('blown'));
-          if (unblown.length > 0) {
-            blowCandle(unblown[0]);
-          }
-        }
-      }, 140);
-
-      showToast('Microphone active! Blow to extinguish! 🕯️');
-    } catch {
-      showToast('Tap each flame to blow it out! 🕯️');
-    }
-  }
-
-  function stopMic() {
-    if (micInterval) {
-      clearInterval(micInterval);
-      micInterval = null;
-    }
-    if (micStream) {
-      micStream.getTracks().forEach(track => track.stop());
-      micStream = null;
-    }
-    if (audioCtx) {
-      audioCtx.close();
-      audioCtx = null;
     }
   }
 
@@ -164,13 +102,10 @@ export function initCakeCeremonyPage(pageManager, navigation) {
     onEnter: () => {
       candlesBlown = 0;
       flames.forEach(f => f.classList.remove('blown'));
-      if (instructionText) instructionText.textContent = 'Make a birthday wish... Then blow the candles. ✨';
+      if (instructionText) instructionText.textContent = 'Make a birthday wish... Then tap the candles to blow them out! ✨';
       disableButton(continueBtn);
-
-      setTimeout(initMic, 500);
     },
-    onExit: () => {
-      stopMic();
-    }
+    onExit: () => {}
   });
 }
+
