@@ -819,6 +819,30 @@ export class FinalSurpriseFlow {
             </button>
           </div>
         </div>
+
+        <!-- Full-Screen Floating Viewport Overlay Layer for Shooting Star -->
+        <div class="shooting-star-viewport-layer" id="shooting-star-viewport-layer">
+          <div class="floating-shooting-star" id="floating-shooting-star" role="button" tabindex="0" title="A secret wish..." aria-label="Make a Wish">
+            <div class="star-tail-glow"></div>
+            <div class="star-head">🌠</div>
+            <span class="star-badge-hint">✨ tap me</span>
+          </div>
+
+          <!-- Secret Wishing Sky Modal Overlay -->
+          <div class="wishing-secret-modal" id="wishing-secret-modal" style="display: none;">
+            <div class="wishing-modal-card">
+              <button class="wishing-modal-close" id="wishing-modal-close" aria-label="Close">✕</button>
+              <div class="wishing-modal-flower">🌸</div>
+              <p class="wishing-modal-quote" id="wishing-modal-quote">
+                "Some wishes are meant to be made, not just read…"
+              </p>
+              <button class="btn-wishing-cta" id="btn-wishing-cta" style="display: none;">
+                <span>🌠</span>
+                <span>Make Your Wish</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     `;
 
@@ -862,6 +886,9 @@ export class FinalSurpriseFlow {
       });
     }
 
+    // Initialize Full-Screen Floating Viewport Shooting Star Trajectory Engine
+    this.initFloatingShootingStar();
+
     this.initSakuraCanvas();
 
     const card = this.container.querySelector('.post-credits-card');
@@ -870,6 +897,198 @@ export class FinalSurpriseFlow {
         { scale: 0.85, opacity: 0, y: 25 },
         { scale: 1, opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }
       );
+    }
+  }
+
+  /**
+   * FULL-SCREEN FLOATING VIEWPORT SHOOTING STAR TRAJECTORY ENGINE
+   */
+  initFloatingShootingStar() {
+    if (!this.container) return;
+
+    const starEntity = this.container.querySelector('#floating-shooting-star');
+    const secretModal = this.container.querySelector('#wishing-secret-modal');
+    const modalQuote = this.container.querySelector('#wishing-modal-quote');
+    const ctaBtn = this.container.querySelector('#btn-wishing-cta');
+    const modalClose = this.container.querySelector('#wishing-modal-close');
+
+    if (!starEntity || !secretModal || !ctaBtn) return;
+
+    let isTapped = false;
+    let starFlightTween = null;
+
+    // Viewport-safe bounds calculation
+    const getBounds = () => {
+      const padX = 40;
+      const padY = 70;
+      const vw = Math.max(320, window.innerWidth);
+      const vh = Math.max(480, window.innerHeight);
+
+      return {
+        minX: padX,
+        maxX: Math.max(padX + 60, vw - padX - 120),
+        minY: padY,
+        maxY: Math.max(padY + 60, vh - padY - 80)
+      };
+    };
+
+    let bounds = getBounds();
+    let currX = bounds.minX + Math.random() * (bounds.maxX - bounds.minX);
+    let currY = bounds.minY + Math.random() * (bounds.maxY - bounds.minY);
+
+    if (typeof window.gsap !== 'undefined') {
+      window.gsap.set(starEntity, { x: currX, y: currY });
+    } else {
+      starEntity.style.transform = `translate(${currX}px, ${currY}px)`;
+    }
+
+    // Waypoint Navigation Loop (Natural Curved Flight across full viewport)
+    const flyToNextWaypoint = () => {
+      if (isTapped || this.currentStage !== 'post-credits') return;
+
+      bounds = getBounds();
+      const targetX = bounds.minX + Math.random() * (bounds.maxX - bounds.minX);
+      const targetY = bounds.minY + Math.random() * (bounds.maxY - bounds.minY);
+
+      const dx = targetX - currX;
+      const dy = targetY - currY;
+      const dist = Math.hypot(dx, dy);
+
+      const duration = Math.max(3.8, Math.min(8, dist / 95));
+      const angleRad = Math.atan2(dy, dx);
+      const angleDeg = angleRad * (180 / Math.PI);
+
+      if (typeof window.gsap !== 'undefined') {
+        starFlightTween = window.gsap.to(starEntity, {
+          x: targetX,
+          y: targetY,
+          rotation: angleDeg + 35,
+          duration: duration,
+          ease: 'sine.inOut',
+          onUpdate: () => {
+            currX = window.gsap.getProperty(starEntity, 'x') || currX;
+            currY = window.gsap.getProperty(starEntity, 'y') || currY;
+          },
+          onComplete: () => {
+            flyToNextWaypoint();
+          }
+        });
+      }
+    };
+
+    // Start flight loop
+    flyToNextWaypoint();
+
+    // Resize Handler to keep star inside screen
+    const onResize = () => {
+      bounds = getBounds();
+      currX = Math.max(bounds.minX, Math.min(currX, bounds.maxX));
+      currY = Math.max(bounds.minY, Math.min(currY, bounds.maxY));
+      if (!isTapped && typeof window.gsap !== 'undefined') {
+        window.gsap.set(starEntity, { x: currX, y: currY });
+      }
+    };
+    window.addEventListener('resize', onResize);
+
+    // Tap/Click Handler on Floating Shooting Star
+    starEntity.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (isTapped) return;
+      isTapped = true;
+
+      audioManager.playChime?.();
+
+      // 1. Freeze star movement at current coordinates
+      if (starFlightTween) starFlightTween.kill();
+      starEntity.classList.add('star-frozen');
+
+      // 2. Trigger magical sparkle particle burst from current star position
+      const starRect = starEntity.getBoundingClientRect();
+      const centerX = starRect.left + starRect.width / 2;
+      const centerY = starRect.top + starRect.height / 2;
+
+      for (let i = 0; i < 14; i++) {
+        const sparkle = document.createElement('span');
+        sparkle.className = 'star-sparkle';
+        sparkle.textContent = i % 2 === 0 ? '✨' : '⭐';
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = `${centerX}px`;
+        sparkle.style.top = `${centerY}px`;
+        document.body.appendChild(sparkle);
+
+        const angle = (i / 14) * Math.PI * 2;
+        const dist = 40 + Math.random() * 30;
+        const targetX = centerX + Math.cos(angle) * dist;
+        const targetY = centerY + Math.sin(angle) * dist;
+
+        if (typeof window.gsap !== 'undefined') {
+          window.gsap.fromTo(sparkle,
+            { x: 0, y: 0, scale: 0.5, opacity: 1 },
+            {
+              x: targetX - centerX,
+              y: targetY - centerY,
+              scale: 1.4,
+              opacity: 0,
+              duration: 0.85,
+              ease: 'power2.out',
+              onComplete: () => sparkle.remove()
+            }
+          );
+        } else {
+          setTimeout(() => sparkle.remove(), 850);
+        }
+      }
+
+      // Hide hint badge on star
+      const hint = starEntity.querySelector('.star-badge-hint');
+      if (hint) hint.style.display = 'none';
+
+      // 3. Reveal Centered Glass Secret Modal Overlay
+      secretModal.style.display = 'flex';
+      if (typeof window.gsap !== 'undefined') {
+        window.gsap.fromTo(secretModal,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.4 }
+        );
+        window.gsap.fromTo(modalQuote,
+          { opacity: 0, y: 15, scale: 0.92 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power2.out' }
+        );
+      }
+
+      // 4. After short delay, reveal glowing CTA button: "🌠 Make Your Wish"
+      setTimeout(() => {
+        ctaBtn.style.display = 'flex';
+        if (typeof window.gsap !== 'undefined') {
+          window.gsap.fromTo(ctaBtn,
+            { opacity: 0, y: 15, scale: 0.9 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.5)' }
+          );
+        } else {
+          ctaBtn.style.opacity = '1';
+          ctaBtn.style.transform = 'none';
+        }
+      }, 650);
+    });
+
+    // 5. Open exact deployed Wishing project in new tab
+    ctaBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      audioManager.playChime?.();
+      window.open('https://subhankar3012.github.io/the-wishing-sky/', '_blank', 'noopener,noreferrer');
+    });
+
+    // Modal Close Button
+    if (modalClose) {
+      modalClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        audioManager.playPaper?.();
+        if (typeof window.gsap !== 'undefined') {
+          window.gsap.to(secretModal, { opacity: 0, duration: 0.3, onComplete: () => { secretModal.style.display = 'none'; } });
+        } else {
+          secretModal.style.display = 'none';
+        }
+      });
     }
   }
 

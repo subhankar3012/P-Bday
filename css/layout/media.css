@@ -2967,5 +2967,215 @@ body.popup-open footer {
   box-shadow: 0 4px 12px rgba(186, 104, 200, 0.15);
 }
 
+/* ━━━━━ FLOATING VIEWPORT SHOOTING STAR OVERLAY STYLES ━━━━━ */
+
+.shooting-star-viewport-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.floating-shooting-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 240, 248, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid rgba(255, 182, 201, 0.8);
+  border-radius: 26px;
+  padding: 8px 16px;
+  box-shadow: 0 10px 30px rgba(255, 126, 185, 0.35), 0 0 18px rgba(255, 215, 0, 0.4);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+.floating-shooting-star:hover {
+  background: rgba(255, 250, 240, 0.95);
+  border-color: #FFD54F;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 12px 35px rgba(186, 104, 200, 0.4);
+}
+
+.floating-shooting-star.star-frozen {
+  border-color: #FFD54F !important;
+  background: rgba(255, 252, 235, 0.98) !important;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.9), 0 14px 40px rgba(186, 104, 200, 0.5) !important;
+}
+
+.star-tail-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 30px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, rgba(255, 126, 185, 0.3) 50%, transparent 75%);
+  pointer-events: none;
+  animation: pulse-tail-glow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-tail-glow {
+  0% { opacity: 0.5; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+.star-head {
+  font-size: 1.6rem;
+  line-height: 1;
+  display: inline-block;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.9));
+  animation: star-icon-float 2s ease-in-out infinite alternate;
+}
+
+@keyframes star-icon-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+.star-badge-hint {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #8E24AA;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+/* Wishing Secret Center Modal Overlay */
+.wishing-secret-modal {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(40, 15, 30, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.wishing-modal-card {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 2.5px solid #FFFFFF;
+  border-radius: 30px;
+  padding: 32px 26px;
+  box-shadow: 0 25px 70px rgba(180, 140, 120, 0.35), 0 0 40px rgba(255, 182, 217, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.wishing-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(243, 229, 245, 0.7);
+  border: 1px solid rgba(186, 104, 200, 0.3);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  color: #8E24AA;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.wishing-modal-close:hover {
+  background: rgba(255, 126, 185, 0.9);
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+.wishing-modal-flower {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  animation: float-icon 2.5s ease-in-out infinite alternate;
+}
+
+.wishing-modal-quote {
+  font-family: var(--font-hand);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #4A148C;
+  line-height: 1.55;
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+
+/* Glowing CTA Button */
+.btn-wishing-cta {
+  background: linear-gradient(135deg, #FF7EB9 0%, #BA68C8 50%, #FFD54F 100%);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  border-radius: 28px;
+  padding: 13px 26px;
+  min-height: 52px;
+  width: 100%;
+  box-shadow: 0 12px 35px rgba(186, 104, 200, 0.4), 0 0 25px rgba(255, 215, 0, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s var(--ease-bounce);
+  touch-action: manipulation;
+  animation: cta-glow-pulse 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes cta-glow-pulse {
+  0% {
+    box-shadow: 0 10px 28px rgba(186, 104, 200, 0.35), 0 0 15px rgba(255, 215, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 16px 42px rgba(186, 104, 200, 0.6), 0 0 32px rgba(255, 215, 0, 0.8);
+    transform: scale(1.02);
+  }
+}
+
+.btn-wishing-cta:hover {
+  transform: translateY(-2px) scale(1.04) !important;
+  box-shadow: 0 18px 48px rgba(186, 104, 200, 0.65), 0 0 38px rgba(255, 215, 0, 0.9) !important;
+}
+
+.btn-wishing-cta:active {
+  transform: scale(0.96) !important;
+}
+
+/* Sparkle Particle FX */
+.star-sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.2rem;
+  z-index: 10001;
+}
+
+
+
 
 
