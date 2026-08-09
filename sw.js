@@ -2,7 +2,7 @@
    SERVICE WORKER — Offline Caching & PWA Support
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-const CACHE_NAME = 'moonlight-bday-v2';
+const CACHE_NAME = 'moonlight-bday-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
